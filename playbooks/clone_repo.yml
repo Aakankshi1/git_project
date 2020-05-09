@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  connection: local
+  vars_files:
+   - ~/Documents/Ansible_Playbooks/git_project/vars_files/origin_repo_lists.yml
+   - ~/Documents/Ansible_Playbooks/git_project/vars_files/upstream_repo_lists.yml
+  tasks:
+   - name: Cloning repo
+     git:
+      repo: "{{ repo_link  }}" 
+      dest: ~/Documents/Ansible_Playbooks/git_project/ 
